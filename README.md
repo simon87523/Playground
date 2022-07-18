@@ -7,3 +7,11 @@ Erste Erfahrungen mit Programmierung, Versionsverwaltng und Ticketing machen.
 18.7.2022 - 22.7.2022
 
 
+# Arbeitsprotokoll
+
+* 18.7.2022
+    * Arbeitsplatz installieren
+    * Visual Studio installieren
+    * Crashkurs GIT
+    * Aufgabe: Größte Zahl unter mehreren finden
+
