@@ -1,9 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Playground;
 
 
-for (var i = 0; i < 100; i++)
+
+
+// var <Name> = new <Klassenname>();
+
+var loopDetails = new LoopConfig();
+loopDetails.StartValue = 5;
+loopDetails.EndValue = 15;
+
+// for (<start>; <bedingung>; <nachbehandlung>)
+for (var i = loopDetails.StartValue; i <= loopDetails.EndValue; i++)
 {
     Console.WriteLine(i);
 }
-  
