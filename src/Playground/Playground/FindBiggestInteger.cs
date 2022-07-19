@@ -36,11 +36,17 @@
 
             return max;
         }
-    
-    
-        //public static int GetMax_3(int[] values)
-        //{
 
-        //}
+        
+        public static int GetMax_3(int[] values)
+        {
+            int max = values[0];
+            for (int i = 1; i < 7; i++)
+            {
+                if (values[i] > max)
+                    max = values[i];
+            }
+            return max;
+        }
     }
 }
