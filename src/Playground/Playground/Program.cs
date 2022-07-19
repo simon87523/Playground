@@ -1,42 +1,97 @@
 ﻿using Playground.ClassDemo;
 
 
-var bike = new Vehicle();
+// Fahrzeugflotte beim Benutzer erfragen
+Vehicle[]? fleet = CreateVehicles(4);
 
-bike.Name = "Charlie";
-bike.Mark = "Cube";
-bike.NumberOfWheels = 2;
-bike.Price = 1050;
+// Preis des teuersten Fahrzeugs ermitteln
+int maxPrice = GetGighestPrice(fleet);
 
-DisplayVehicleDetails(bike);
+// Fahrzeuge die den höchsten Preis haben ausgeben
+foreach (Vehicle? vehicle in fleet)
+    if (vehicle.Price == maxPrice)
+        DisplayVehicleDetails(vehicle);
 
 
-void DisplayVehicleDetails(Vehicle vehicle)
+
+static int GetGighestPrice(Vehicle[] fleet)
 {
-    //Get Type
-    switch (bike.NumberOfWheels)
+
+    int max = 0;
+
+    foreach (Vehicle? vehicle in fleet)
     {
-        case 1:
-            vehicle.Type = "Unicycle";
-            break;
-        case 2:
-            vehicle.Type = "Bike";
-            break;
-        case 3:
-            vehicle.Type = "Tricycle";
-            break;
-        case 4:
-            vehicle.Type = "Car";
-            break;
-        default:
-            vehicle.Type = "Unknown";
-            break; 
+        if (vehicle.Price > max)
+        {
+            max = vehicle.Price;
+        }
     }
 
+    return max;
+}
+
+static Vehicle[] CreateVehicles(int vehicleCount)
+{
+
+    //Fuhrpark
+    Vehicle[] fleet = new Vehicle[vehicleCount];
+
+    //Fuhrpark durch Benutzereingaben anlegen
+    for (int i = 0; i < vehicleCount; i++)
+    {
+        var vehicle = new Vehicle();
+
+        //Enter Variables
+        Console.WriteLine($"Vehicle {i}");
+        Console.WriteLine("Enter name:");
+        vehicle.Name = Console.ReadLine() ?? "";
+        Console.WriteLine("Enter mark:");
+        vehicle.Mark = Console.ReadLine() ?? "";
+        Console.WriteLine("Enter number of wheels:");
+        vehicle.NumberOfWheels = int.Parse(Console.ReadLine() ?? "0");
+        Console.WriteLine("Enter price:");
+        vehicle.Price = int.Parse(Console.ReadLine() ?? "0");
+
+        //Get Type
+        vehicle.Type = vehicle.NumberOfWheels switch
+        {
+            1 => "Unicycle",
+            2 => "Bike",
+            3 => "Tricycle",
+            4 => "Car",
+            _ => "Unknown",
+        };
+
+        //Save Information
+        fleet[i] = vehicle;
+
+    }
+
+    return fleet;
+
+}
+
+static void DisplayVehicleDetails(Vehicle vehicle)
+{
+    //Get Type
+    vehicle.Type = vehicle.NumberOfWheels switch
+    {
+        1 => "Unicycle",
+        2 => "Bike",
+        3 => "Tricycle",
+        4 => "Car",
+        _ => "Unknown",
+    };
+
     //Write properties
-    Console.WriteLine($"Vehicle-Details ({vehicle.NumberOfWheels} wheels):");
-    Console.WriteLine($"  Name: {vehicle.Name}");
-    Console.WriteLine($"  Mark: {vehicle.Mark}");
-    Console.WriteLine($"  Price: {vehicle.Price}");
-    Console.WriteLine($"  Type: {vehicle.Type}");
+    DisplayProperties(vehicle);
+
+    static void DisplayProperties(Vehicle vehicle)
+    {
+        Console.WriteLine($"Vehicle-Details ({vehicle.NumberOfWheels} wheels):");
+        Console.WriteLine($"  Name: {vehicle.Name}");
+        Console.WriteLine($"  Mark: {vehicle.Mark}");
+        Console.WriteLine($"  Price: {vehicle.Price}");
+        Console.WriteLine($"  Type: {vehicle.Type}");
+    }
 }
