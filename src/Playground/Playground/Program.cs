@@ -15,6 +15,10 @@ using Playground;
 
 
 
+var cd = new ConditionsDemo();
+cd.SwitchCaseDemo();
+
+
 var itemCount = 7;
 var liste = new int[itemCount];
 

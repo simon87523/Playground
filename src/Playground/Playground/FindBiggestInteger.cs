@@ -37,7 +37,11 @@
             return max;
         }
 
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
         public static int GetMax_3(int[] values)
         {
             int max = values[0];
