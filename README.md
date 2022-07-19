@@ -13,5 +13,10 @@ Erste Erfahrungen mit Programmierung, Versionsverwaltng und Ticketing machen.
     * Arbeitsplatz installieren
     * Visual Studio installieren
     * Crashkurs GIT
-    * Aufgabe: Größte Zahl unter mehreren finden
+    * Aufgabe: GrÃ¶ÃŸte Zahl unter mehreren finden
+
+* 19.7.2022
+   * Arbeiten mit Klassen
+   * verschiedene Loops
+   * teursten Preis und Ã¼berdurchschnittlichen Preis von vom nutzer erstellten        Fahrzeugen
 
