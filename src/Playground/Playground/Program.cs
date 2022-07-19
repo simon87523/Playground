@@ -1,49 +1,42 @@
-﻿
-using Playground;
-
-//Console.WriteLine("Bitte erste Zahl eingeben:");
-//var a = int.Parse(Console.ReadLine() ?? "0");
-
-//Console.WriteLine("Bitte zweite Zahl eingeben:");
-//var b = int.Parse(Console.ReadLine() ?? "0");
-
-//Console.WriteLine("Bitte dritte Zahl eingeben:");
-//var c = int.Parse(Console.ReadLine() ?? "0");
-
-//var max = FindBiggestInteger.GetMax_2(a, b, c);
-//Console.WriteLine($"Die größte Zahl lautet {max}.");
+﻿using Playground.ClassDemo;
 
 
+var bike = new Vehicle();
 
-var cd = new ConditionsDemo();
-cd.SwitchCaseDemo();
+bike.Name = "Charlie";
+bike.Mark = "Cube";
+bike.NumberOfWheels = 2;
+bike.Price = 1050;
 
-
-var itemCount = 7;
-var liste = new int[itemCount];
-
-
-
-
-//liste[0] = a;
-//liste[1] = b;
-//liste[2] = c;
+DisplayVehicleDetails(bike);
 
 
-//Input
-for (int i = 0; i < itemCount; i++)
+void DisplayVehicleDetails(Vehicle vehicle)
 {
-    Console.WriteLine("Bitte Zahl eingeben :");
-    int c = int.Parse(Console.ReadLine() ?? "0");
-    liste[i] = c;
-}
+    //Get Type
+    switch (bike.NumberOfWheels)
+    {
+        case 1:
+            vehicle.Type = "Unicycle";
+            break;
+        case 2:
+            vehicle.Type = "Bike";
+            break;
+        case 3:
+            vehicle.Type = "Tricycle";
+            break;
+        case 4:
+            vehicle.Type = "Car";
+            break;
+        default:
+            vehicle.Type = "Unknown";
+            break; 
+    }
 
-//Output
-Console.WriteLine("Liste:");
-for (int i = 0; i < itemCount; i++)
-{
-    Console.WriteLine(liste[i]);
+    //Write properties
+    Console.WriteLine($"Vehicle-Details ({vehicle.NumberOfWheels} wheels):");
+    Console.WriteLine($"  Name: {vehicle.Name}");
+    Console.WriteLine($"  Mark: {vehicle.Mark}");
+    Console.WriteLine($"  Price: {vehicle.Price}");
+    Console.WriteLine($"  Type: {vehicle.Type}");
 }
-
-var max = FindBiggestInteger.GetMax_3(liste);
-Console.WriteLine($"Die größte Zahl lautet {max}.");
