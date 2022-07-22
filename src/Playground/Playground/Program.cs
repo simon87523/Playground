@@ -6,8 +6,9 @@ namespace Playground
     {
         public static void Main()
         {
-
-            Schach.DrawInRange(16, 1);
+            int accuracy = 20;
+            double goldenerSchnitt = Formeln.GoldenerSchnitt(accuracy);
+            Console.WriteLine($"Golderner Schnitt (mit Genauigkeit {accuracy}): {goldenerSchnitt}");
             Console.ReadLine();
         }
     }

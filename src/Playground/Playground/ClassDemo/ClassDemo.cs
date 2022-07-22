@@ -424,4 +424,34 @@
             return inRange;
         }
     }
+
+    internal class Formeln
+    {
+        /// <summary>
+        /// Berechnet eine beliebig genaue Annäherung an den Goldenen Schnitt
+        /// </summary>
+        /// <param name="accuracy">Genauigkeit</param>
+        /// <returns>Golderner Schnitt</returns>
+        public static double GoldenerSchnitt(int accuracy)
+        {
+            /// aktuelles Ergebnis
+            double cache = 1;
+            // temporäres Speichern des letzten Ergebnisses
+            double temporaryCache;
+            // speichert letztes Ergebnis
+            double lastResult = 1;
+
+            for (int i = 1; i < accuracy; i++)
+            {
+                temporaryCache = cache;
+                cache += lastResult;
+                lastResult = temporaryCache;
+
+                Console.Write($"{cache} ");
+            }
+            return cache / lastResult;
+        }
+    }
 }
+
+
