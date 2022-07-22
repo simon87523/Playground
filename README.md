@@ -29,7 +29,8 @@ Erste Erfahrungen mit Programmierung, Versionsverwaltng und Ticketing machen.
    * Arbeiten mit Formeln
    * "Schachbrett" erstellen
    * Zeichen in einer bestimmten Entfernung erkennen
- * 21.7.2022
+ 
+ * 22.7.2022
    * Arbeiten mit Dezimalzahlen
    * Primzahlen ermitteln
 
