@@ -8,4 +8,10 @@
     <StartupObject>Playground.Program</StartupObject>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="fleet.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
